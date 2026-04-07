@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ats-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ats-backend
+  template:
+    metadata:
+      labels:
+        app: ats-backend
+    spec:
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 8.8.8.8
+          - 1.1.1.1
+      containers:
+        - name: ats-backend
+          image: chsrinivas55/ats-backend:v2
+          ports:
+            - containerPort: 5000
+          env:
+            - name: PORT
+              value: ""
+              # (All .env variables in this format)

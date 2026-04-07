@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ats-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ats-frontend
+  template:
+    metadata:
+      labels:
+        app: ats-frontend
+    spec:
+      containers:
+      - name: ats-frontend
+        image: chsrinivas55/ats-frontend:v5
+        ports:
+        - containerPort: 80
