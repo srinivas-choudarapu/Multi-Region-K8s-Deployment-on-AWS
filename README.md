@@ -166,6 +166,9 @@ AWS Route53 (DNS)
 
 ## 📸 Screenshots
 
+### Architecture
+![Architecture](screenshots/arch.png)
+
 ### Cluster Nodes — Virginia
 ![Virginia Nodes](screenshots/cluster-nodes-virginia.png)
 
